@@ -1,6 +1,9 @@
-import React from 'react';
+"use client"
+import React,{useEffect} from 'react';
 
 const Pricing = () => {
+    
+    
     return (
         <div className="min-h-screen bg-black text-white px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20" id='pricing'>
             <div className="text-center mb-16">

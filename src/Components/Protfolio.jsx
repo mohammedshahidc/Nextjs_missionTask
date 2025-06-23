@@ -1,58 +1,68 @@
 'use client';
-import React from 'react';
+import React ,{useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const portfolioItems = [
-  {
-    id: 1,
-    title: "Slipery moneys - e-commerce platform for high risk industries",
-    image: "/image1.jpg",
-    year: "2023",
-    category: "E-commerce",
-    description: "A high-risk e-commerce platform for digital goods and services."
-  },
-  {
-    id: 2,
-    title: "Hybrid capital - digital currency",
-    image: "/image2.jpg",
-    year: "2022",
-    category: "Fintech",
-    description: "Digital assets ecosystem with strong compliance and usability."
-  },
-  {
-    id: 3,
-    title: "Betero - sports betting platform",
-    image: "/image3.jpg",
-    year: "2023",
-    category: "Sports",
-    description: "Web3-powered betting experience across sports and leagues."
-  },
-  {
-    id: 4,
-    title: "Exec - employees financial wellness saas",
-    image: "/image4.jpg",
-    year: "2023",
-    category: "SaaS",
-    description: "Helps employees manage money through employer-provided tools."
-  },
-  {
-    id: 5,
-    title: "Voltoge - accessible clean energy startup",
-    image: "/image5.jpg",
-    year: "2022",
-    category: "Energy",
-    description: "Green energy tech for underserved communities."
-  },
-  {
-    id: 6,
-    title: "Hyperbolic - a decentralized data transmission startup",
-    image: "/image6.jpg",
-    year: "2024",
-    category: "Infrastructure",
-    description: "P2P high-speed encrypted data sharing platform."
-  }
-];
+
 
 const Portfolio = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 800, 
+          once: false     
+        });
+      }, []);
+    
+    const portfolioItems = [
+        {
+          id: 1,
+          title: "Slipery moneys - e-commerce platform for high risk industries",
+          image: "/image1.jpg",
+          year: "2023",
+          category: "E-commerce",
+          description: "A high-risk e-commerce platform for digital goods and services."
+        },
+        {
+          id: 2,
+          title: "Hybrid capital - digital currency",
+          image: "/image2.jpg",
+          year: "2022",
+          category: "Fintech",
+          description: "Digital assets ecosystem with strong compliance and usability."
+        },
+        {
+          id: 3,
+          title: "Betero - sports betting platform",
+          image: "/image3.jpg",
+          year: "2023",
+          category: "Sports",
+          description: "Web3-powered betting experience across sports and leagues."
+        },
+        {
+          id: 4,
+          title: "Exec - employees financial wellness saas",
+          image: "/image4.jpg",
+          year: "2023",
+          category: "SaaS",
+          description: "Helps employees manage money through employer-provided tools."
+        },
+        {
+          id: 5,
+          title: "Voltoge - accessible clean energy startup",
+          image: "/image5.jpg",
+          year: "2022",
+          category: "Energy",
+          description: "Green energy tech for underserved communities."
+        },
+        {
+          id: 6,
+          title: "Hyperbolic - a decentralized data transmission startup",
+          image: "/image6.jpg",
+          year: "2024",
+          category: "Infrastructure",
+          description: "P2P high-speed encrypted data sharing platform."
+        }
+      ];
   return (
     <section className="w-full bg-black text-white min-h-screen py-20 px-6 lg:px-16" id='portfolio'>
       <div className="max-w-[1400px] mx-auto">
@@ -80,7 +90,8 @@ const Portfolio = () => {
         {/* Three Column Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {portfolioItems.map((item, index) => (
-            <div key={item.id} className="group cursor-pointer">
+            <div key={item.id} className="group cursor-pointer"  data-aos="fade-up"
+            data-aos-delay={index * 150}>
               {/* Image Container */}
               <div className="relative h-[450px] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800  mb-6">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>

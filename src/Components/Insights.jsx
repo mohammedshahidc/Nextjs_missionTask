@@ -1,6 +1,16 @@
-import React from 'react';
+'use client'
+import React,{useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Insights = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 800, 
+          once: false     
+        });
+      }, []);
+    
   const faqs = [
     "Is it really unlimited?",
     "Why wouldn't I just hire a freelancer?",
@@ -39,6 +49,8 @@ const Insights = () => {
         <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-4">
           {faqs.map((question, index) => (
             <div
+            data-aos="fade-up"
+            data-aos-delay={index * 150}
               key={index}
               className="bg-[#1a1a1a] rounded-lg sm:rounded-xl border border-gray-900"
             >

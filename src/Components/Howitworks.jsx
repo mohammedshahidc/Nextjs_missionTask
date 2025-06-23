@@ -1,6 +1,15 @@
-import React from 'react';
-
+'use client'
+import React ,{useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Howitworks = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 800, 
+          once: false     
+        });
+      }, []);
+    
   const steps = [
     {
       number: "1",
@@ -46,6 +55,8 @@ const Howitworks = () => {
           {steps.map((step, index) => (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
               className="bg-[#141414] border border-[#2a2a2a] rounded-3xl p-8 hover:bg-[#1c1c1c] transition duration-300"
             >
               <div className="flex items-center mb-6">

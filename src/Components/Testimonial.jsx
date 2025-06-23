@@ -1,6 +1,15 @@
-import React from 'react';
-
+"use client"
+import React ,{useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Testimonial = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 800,
+          once: true    
+        });
+      }, []);
+    
   const testimonials = [
     {
       id: 1,
@@ -84,8 +93,10 @@ const Testimonial = () => {
 
         {/* Masonry Layout */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          {testimonials.map((t) => (
+          {testimonials.map((t,index) => (
             <div
+            data-aos="fade-up"
+            data-aos-delay={index * 150}
               key={t.id}
               className="break-inside-avoid bg-[#1c1c1e] rounded-2xl p-6 border border-[#2c2c2e] shadow-md hover:bg-[#2a2a2e] transition"
             >
