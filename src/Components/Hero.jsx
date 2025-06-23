@@ -12,7 +12,7 @@ const Hero = () => {
         <Navbar />
 
         {/* Rating Badge */}
-        <div className="flex flex-col items-center justify-center pt-10 sm:pt-12 md:pt-14 lg:pt-16 px-4">
+        <div className="flex flex-col items-center justify-center pt-6 sm:pt-10 md:pt-10 lg:pt-8 px-4">
           <div className="bg-black/30 backdrop-blur-sm border border-gray-700 rounded-full px-4 sm:px-6 py-2 sm:py-3 flex items-center space-x-2 sm:space-x-3 mb-4">
             <span className="text-white text-sm sm:text-base font-medium">5.0</span>
             <div className="flex space-x-1">
