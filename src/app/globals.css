@@ -1,0 +1,52 @@
+@import "tailwindcss";
+/* globals.css */
+
+:root {
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-montserrat);
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 54px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
